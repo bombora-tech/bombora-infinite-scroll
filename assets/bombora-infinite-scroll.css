@@ -1,0 +1,26 @@
+/* Bombora Infinite Scroll */
+.bis-hidden,
+.infinite-load-more,
+.zg-lm-count{display:none!important}
+.bis{margin:18px auto 8px;width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:13px;line-height:1.4;color:var(--bis-c-text,#6b6b6b);text-align:center;grid-column:1/-1}
+.bis-txt{font-variant-numeric:tabular-nums}
+.bis-txt b{color:var(--bis-c-strong,#212121);font-weight:700}
+.bis-bar{width:220px;max-width:70%;height:4px;border-radius:2px;background:var(--bis-c-track,#e7e7e7);overflow:hidden}
+.bis-bar span{display:block;height:100%;width:0;background:var(--bis-c-accent,#d31014);border-radius:2px;transition:width .35s ease}
+.bis-btn{appearance:none;-webkit-appearance:none;border:1px solid var(--bis-btn-border,#d31014);background:var(--bis-btn-bg,#d31014);color:var(--bis-btn-text,#fff);border-radius:var(--bis-btn-radius,8px);min-height:42px;padding:0 22px;font:inherit;font-size:14px;font-weight:700;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;transition:background-color .15s,color .15s,border-color .15s}
+.bis-btn:hover,.bis-btn:focus-visible{background:var(--bis-btn-hover-bg,#b00d10);border-color:var(--bis-btn-hover-bg,#b00d10);color:var(--bis-btn-hover-text,#fff)}
+.bis-btn[hidden]{display:none}
+.bis.is-loading .bis-btn{pointer-events:none;opacity:.7}
+.bis-spin{width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;display:none;animation:bis-spin .7s linear infinite}
+.bis.is-loading .bis-spin{display:inline-block}
+.bis-skel{pointer-events:none}
+.bis-skel i{display:block;height:12px;margin:6px 0;border-radius:6px;background:linear-gradient(90deg,#eef0f2 25%,#f7f8f9 50%,#eef0f2 75%);background-size:200% 100%;animation:bis-sk 1.2s ease-in-out infinite}
+.bis-skel .bis-sk-img{height:auto;aspect-ratio:1/1;width:100%;border-radius:8px;margin-bottom:12px}
+.bis-skel.bis-row .bis-sk-img{width:44px;height:44px;aspect-ratio:auto;margin:0}
+.bis-skel .bis-sk-s{width:55%;margin-left:auto;margin-right:auto}
+.bis-skel.bis-row .bis-sk-s{margin-left:0}
+.bis-new{animation:bis-in .3s ease both}
+@keyframes bis-spin{to{transform:rotate(360deg)}}
+@keyframes bis-sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes bis-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.bis-skel i,.bis-spin,.bis-new{animation:none}}
